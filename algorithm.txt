@@ -1,0 +1,15 @@
+Author: Anthony Reyes
+Author ID: areyes15
+Section: OPS435NBB
+
+Description of main program:
+The main program will require the user to input their date of birth then the program would verify if the user inputted their DOB in one of the correct formats, if it is not correct the user would be asked to re-input in one of the correct formats. The program will match the inputted month to the correct three-letter abbreviation. The program will then take the data and convert it to standard format which is “mmm d, yyyy” where ‘mmm’ is the three-letter abbreviated month, ‘d’ is a one- or two-digit day of the month and ‘yyyy’ is the four-digit year. 
+
+Algorithm for assignment 1: 
+1)Take user input and check if it is one of the correct formats.
+
+2)Once it is verified separate the inputted date to individual strings (year, month, date) 
+
+3)Match the given month inputted to the correct three-letter abbreviation using conditional statements.
+
+4)Take the new data and arrange into standard format for output. 
