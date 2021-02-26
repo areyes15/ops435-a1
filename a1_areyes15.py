@@ -104,11 +104,10 @@ if __name__ == "__main__":
    # step 3
    allow_chars = '0123456789'
    dob = sanitize(user_raw_data, allow_chars)
-   print('Sanitized user data:', dob)
-   # setp 4
+   # step 4
    result = size_check(dob,8)
    if result == False:
-       print("Error 09: wrong data entered")
+       print("Error 09: wrong date entered")
        sys.exit()
    # step 5
    year = int(dob[0:4])
@@ -121,7 +120,7 @@ if __name__ == "__main__":
        sys.exit()
    result = range_check(month,(1,12))
    if result == False:
-       print("Error 02: Wrong month entered")
+       print("Error 02: wrong month entered")
        sys.exit()
    result = leap_year(year)
    if result == True:
@@ -133,4 +132,4 @@ if __name__ == "__main__":
    # step 7
    new_dob = str(month_name[month - 1])+' '+ str(day)+', '+str(year)
    # step 8
-   print("Your date of birth is:", new_dob)  
+   print(new_dob)
