@@ -5,20 +5,28 @@
     Please personlize the following author declaration:
 -----------------------------------------------------------------------
 OPS435 Assignment 1 - Winter 2021
-Program: a1_[Seneca_name].py (replace [Seneca_name] with your Seneca User name)
+Program: a1_areyes15.py (replace [Seneca_name] with your Seneca User name)
 Author: "Anthony Reyes"
 The python code in this file (a1_areyes15.py) is original work written by
-"Anthony Reyes". No code in this file is copied from any other source 
-except those provided by the course instructor, including any person, 
-textbook, or on-line resource. I have not shared this python script 
-with anyone or anything except for submission for grading.  
-I understand that the Academic Honesty Policy will be enforced and 
+"Anthony Reyes". No code in this file is copied from any other source
+except those provided by the course instructor, including any person,
+textbook, or on-line resource. I have not shared this python script
+with anyone or anything except for submission for grading.
+I understand that the Academic Honesty Policy will be enforced and
 violators will be reported and appropriate action will be taken.
+'''
+'''
+The purpose of this script is to be given a date of birth in three supported different formats.
+For each supported format of date of birth the script will remove the unnecessary characters from
+the input and return the date of birth in standard date format (EX. 2020-10-10 = Oct 10, 2020) The
+script recoginzes leap years and will only allow inputs for years that are in range from 1900 - 9999.
+
 '''
 import os
 import sys
 
- '''
+def leap_year(obj):
+    '''
     The leap_year() function will check for the amount of days in February to discover if it is a leap year.
     It will then return a false if it is not a leap year or a true if it is a leap year.
     '''
@@ -47,11 +55,11 @@ def sanitize(obj1,obj2):
     so that they don not interfere with the new format and are removed before output.
     '''
 #Code for removing unwanted characters
-    result = ""
+    results = ''
     for char in obj1:
             if char in obj2:
-                result += char
-    return result
+                results += char
+    return results
 
 def size_check(obj, intobj):
     '''
@@ -63,6 +71,8 @@ def size_check(obj, intobj):
     status = False
     if len(obj) == intobj:
         status = True
+    else:
+        status = False
     return status
 
 def range_check(obj1, obj2):
@@ -74,16 +84,18 @@ def range_check(obj1, obj2):
 #range_check function is determining if the inputed data is within the parameters in the arguement.
  status = False
 
- if int(obj1) in range(obj2[0],obj2[1]):
+ if int(obj1) in range(obj2[0],obj2[1]+1):
     status = True
-    
+ else:
+    status = False
+
 #This return status will return true or false, if it returns false it'll display an error message to the screen.
  return status
-    
+
 def usage():
-        """
+        '''
         The usage() function will inform the user on how to properly use the script and its syntax.
-        """
+        '''
 #Display message to the user informing of the scripts proper input format
 #If the length of the command line arguments aren't the length of 2 this message will print to screen and exit the script
         help = """Usage: a1_areyes15.py YYYYMMDD|YYYY/MM/DD|YYYY-MM-DD|YYYY.MM.DD"""
@@ -111,7 +123,7 @@ if __name__ == "__main__":
        sys.exit()
    # step 5
    year = int(dob[0:4])
-   month = int(dob[4:6])
+    month = int(dob[4:6])
    day = int(dob[6:])
    # step 6
    result = range_check(year,(1900,9999))
@@ -133,3 +145,4 @@ if __name__ == "__main__":
    new_dob = str(month_name[month - 1])+' '+ str(day)+', '+str(year)
    # step 8
    print(new_dob)
+
