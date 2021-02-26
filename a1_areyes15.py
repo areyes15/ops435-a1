@@ -18,21 +18,40 @@ violators will be reported and appropriate action will be taken.
 import os
 import sys
 
-def leap_year(obj):
+ '''
+    The leap_year() function will check for the amount of days in February to discover if it is a leap year.
+    It will then return a false if it is not a leap year or a true if it is a leap year.
     '''
-    
-    '''
-    ...
+#Leap year calculations and conditional statements
+    lyear = year % 4
+    if (lyear == 0):
+
+        lyear = year % 100
+        if (lyear == 0):
+
+            lyear = year % 400
+            if (lyear == 0):
+                status = True
+            else:
+               status = False
+        else:
+                status = False
+    else:
+           status = True
 
     return status
 
 def sanitize(obj1,obj2):
     '''
-    put your function level docstring here ...
+    The sanitize() function removes unnecessary characters that are not within the allow-chars variable
+    so that they don not interfere with the new format and are removed before output.
     '''
-    ...
-    
-    return results
+#Code for removing unwanted characters
+    result = ""
+    for char in obj1:
+            if char in obj2:
+                result += char
+    return result
 
 def size_check(obj, intobj):
     '''
