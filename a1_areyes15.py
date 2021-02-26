@@ -55,26 +55,40 @@ def sanitize(obj1,obj2):
 
 def size_check(obj, intobj):
     '''
-    put your function level docstring here ..
+    The size_check() function will check the size of the inputted format for the correct character length,
+    if the size is not correct it will result status as false. If it is the correct length staatus will return
+    as true.
     '''
-    ...
-
+#if condition for size check
+    status = False
+    if len(obj) == intobj:
+        status = True
     return status
 
 def range_check(obj1, obj2):
-    '''
-    put your function level docstring here ..
-    '''
-    ...
+ '''
+  The range_check() function will check the user input to make sure the data is within the correct range.
+  The user can only input a certain range of characters i.e 1900-9999 year and the correct month and date values.
+  If the range is not correct it will return false to status, if the range is correct it will return true.
+ '''
+#range_check function is determining if the inputed data is within the parameters in the arguement.
+ status = False
+
+ if int(obj1) in range(obj2[0],obj2[1]):
+    status = True
     
-    return status
+#This return status will return true or false, if it returns false it'll display an error message to the screen.
+ return status
     
-def usage():    
-    '''
-    put your function level docstring here ...
-    '''
-    ...
-    return status
+def usage():
+        """
+        The usage() function will inform the user on how to properly use the script and its syntax.
+        """
+#Display message to the user informing of the scripts proper input format
+#If the length of the command line arguments aren't the length of 2 this message will print to screen and exit the script
+        help = """Usage: a1_areyes15.py YYYYMMDD|YYYY/MM/DD|YYYY-MM-DD|YYYY.MM.DD"""
+        print (help)
+        exit()
 
 if __name__ == "__main__":
    # step 1
