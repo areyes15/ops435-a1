@@ -3,7 +3,7 @@ Author ID: areyes15
 Section: OPS435NBB
 
 Description of main program:
-The main program will require the user to input their date of birth then the program would verify if the user inputted their DOB in one of the correct formats, if it is not correct the user would be asked to re-input in one of the correct formats. The program will match the inputted month to the correct three-letter abbreviation. The program will then take the data and convert it to standard format which is “mmm d, yyyy” where ‘mmm’ is the three-letter abbreviated month, ‘d’ is a one- or two-digit day of the month and ‘yyyy’ is the four-digit year. 
+The main program will require the user to input their date of birth then the program would verify if the user inputted their DOB in one of the correct formats, if it is not correct the user would be asked to re-input in one of the correct formats. The program will match the inputted month to the correct three-letter abbreviation. The program will then take the data and convert it to standard format which is “mmm d, yyyy” where ‘mmm’ is the three-letter abbreviated month, ‘d’ is a one- or two-digit day of the month and ‘yyyy’ is the four-digit year. As for wrong inputs we have messages that will output to screen if not in proper format or if its wrong data. 
 
 Algorithm for assignment 1: 
 1)Take user input and check if it is one of the correct formats.
@@ -13,3 +13,16 @@ Algorithm for assignment 1:
 3)Match the given month inputted to the correct three-letter abbreviation using conditional statements.
 
 4)Take the new data and arrange into standard format for output. 
+
+
+We need to create 5 functions leap_year, size_check, range_check, sanitize and usage.
+
+The leap_year() function will check for the amount of days in February to discover if it is a leap year. It will then return a false if it is not a leap year or a true if it is a leap year.
+
+The sanitize() function removes unnecessary characters that are not within the allow-chars variable so that they don not interfere with the new format and are removed before output.
+
+The size_check() function will check the size of the inputted format for the correct character length, if the size is not correct it will result status as false. If it is the correct length staatus will return as true.
+
+The range_check() function will check the user input to make sure the data is within the correct range. The user can only input a certain range of characters i.e 1900-9999 year and the correct month and date values. If the range is not correct it will return false to status, if the range is correct it will return true.
+
+The usage() function will inform the user on how to properly use the script and its syntax.
